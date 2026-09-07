@@ -19,6 +19,8 @@ The objective of this project is to deploy a web application on AWS using a secu
 
 ## Project Architecture
 
+![AWS Architecture Diagram](architecture/aws-architecture-diagram.png)
+
 The initial architecture will be:
 
 Internet → Internet Gateway → Public Subnet → EC2 → Nginx → Website
