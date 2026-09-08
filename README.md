@@ -13,6 +13,7 @@
 - Nginx Web Server
 
 4. Project Architecture:
+
 ![AWS Architecture Diagram](aws-architecture-diagram.png)
 
 The initial architecture will be:
