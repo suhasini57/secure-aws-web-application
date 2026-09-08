@@ -16,9 +16,8 @@
 
 ![AWS Architecture Diagram](aws-architecture-diagram.png)
 
-The initial architecture will be:
-
-Internet → Internet Gateway → Public Subnet → EC2 → Nginx → Website
+    The initial architecture will be:
+    Internet → Internet Gateway → Public Subnet → EC2 → Nginx → Website
 
 5. Project Implementation:
     1. Create and configure the VPC.
