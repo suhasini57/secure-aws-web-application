@@ -61,3 +61,7 @@
   - Security improvements
   - Monitoring with CloudWatch
   - Future Docker and CI/CD integration
+
+9. Git & GitHub
+
+This project is maintained using Git and GitHub for version control.
