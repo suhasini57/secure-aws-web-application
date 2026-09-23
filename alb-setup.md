@@ -19,6 +19,7 @@ Web Application
 ```
 
 3. ALB Configuration: The Application Load Balancer is configured as an internet-facing load balancer to accept HTTP traffic from the internet.
+
 Configuration:
 * **Name:** aws-learning-alb
 * **Scheme:** Internet-facing
@@ -26,6 +27,7 @@ Configuration:
 * **Port:** 80
 
 4. Target Group: The target group is used to register the EC2 instance running Nginx with the Application Load Balancer.
+
 Configuration:
 * **Name:** aws-web-targets
 * **Protocol:** HTTP
