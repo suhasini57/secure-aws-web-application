@@ -17,3 +17,10 @@ Nginx
    ↓
 Web Application
 ```
+
+3. ALB Configuration: The Application Load Balancer is configured as an internet-facing load balancer to accept HTTP traffic from the internet.
+Configuration:
+* **Name:** aws-learning-alb
+* **Scheme:** Internet-facing
+* **Protocol:** HTTP
+* **Port:** 80
