@@ -1,8 +1,12 @@
-Application Load Balancer Setup
+# Application Load Balancer Setup
 
-1. Objective: Deploy an Application Load Balancer (ALB) in front of the existing EC2/Nginx web server to distribute incoming HTTP traffic and monitor the health of the web server.
+## 1. Objective
 
-2. Architecture: The application uses an internet-facing Application Load Balancer to receive HTTP traffic and forward requests to the EC2 instance running Nginx.
+Deploy an Application Load Balancer (ALB) in front of the existing EC2/Nginx web server to distribute incoming HTTP traffic and monitor the health of the web server.
+
+## 2. Architecture
+
+The application uses an internet-facing Application Load Balancer to receive HTTP traffic and forward requests to the EC2 instance running Nginx.
 
 ```text
 Internet
@@ -18,21 +22,28 @@ Nginx
 Web Application
 ```
 
-3. ALB Configuration: The Application Load Balancer is configured as an internet-facing load balancer to accept HTTP traffic from the internet.
+## 3. ALB Configuration
 
-## Configuration:
+The Application Load Balancer is configured as an internet-facing load balancer to accept HTTP traffic from the internet.
+
+### Configuration
+
 * **Name:** aws-learning-alb
 * **Scheme:** Internet-facing
 * **Protocol:** HTTP
 * **Port:** 80
 
-4. Target Group: The target group is used to register the EC2 instance running Nginx with the Application Load Balancer.
+## 4. Target Group
 
-## Configuration:
+The target group is used to register the EC2 instance running Nginx with the Application Load Balancer.
+
+### Configuration
+
 * **Name:** aws-web-targets
 * **Protocol:** HTTP
 * **Port:** 80
 * **Target:** EC2 - new-vm
-* **Health Check Path:** /
-* **Success Code:** 200
+* **Health Check Path:** `/`
+* **Success Code:** `200`
+
 The Application Load Balancer uses the health check to verify that the Nginx web server is responding successfully.
