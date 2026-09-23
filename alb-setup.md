@@ -24,3 +24,13 @@ Configuration:
 * **Scheme:** Internet-facing
 * **Protocol:** HTTP
 * **Port:** 80
+
+4. Target Group: The target group is used to register the EC2 instance running Nginx with the Application Load Balancer.
+Configuration:
+* **Name:** aws-web-targets
+* **Protocol:** HTTP
+* **Port:** 80
+* **Target:** EC2 - new-vm
+* **Health Check Path:** /
+* **Success Code:** 200
+The Application Load Balancer uses the health check to verify that the Nginx web server is responding successfully.
