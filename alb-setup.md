@@ -47,3 +47,56 @@ The target group is used to register the EC2 instance running Nginx with the App
 * **Success Code:** `200`
 
 The Application Load Balancer uses the health check to verify that the Nginx web server is responding successfully.
+
+## 5. Security Configuration
+
+Separate security group rules are used for the Application Load Balancer and the EC2 instance.
+
+### ALB Security Group
+
+* **Inbound:** HTTP (Port 80) from the internet (`0.0.0.0/0`)
+
+### EC2 Security Group
+
+* **Inbound:** HTTP (Port 80) from the ALB Security Group
+
+This configuration allows users to access the application through the ALB while restricting direct HTTP access to the EC2 instance.
+
+## 6. Testing
+
+The Application Load Balancer and Nginx web server are tested using target health checks.
+
+### Test 1: Nginx Running
+
+```text
+Nginx running
+     ↓
+Target healthy
+     ↓
+ALB DNS
+     ↓
+Website accessible
+```
+
+Expected result: The EC2 target is healthy and the website is accessible through the ALB DNS name.
+
+### Test 2: Nginx Stopped
+
+```text
+Nginx stopped
+     ↓
+Target unhealthy
+```
+
+Expected result: The target becomes unhealthy because the Nginx web server is no longer responding on port 80.
+
+### Test 3: Nginx Restarted
+
+```text
+Nginx restarted
+     ↓
+Target healthy
+```
+
+Expected result: The target becomes healthy again after the Nginx web server starts responding to the health check.
+
