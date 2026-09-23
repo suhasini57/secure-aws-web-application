@@ -100,3 +100,31 @@ Target healthy
 
 Expected result: The target becomes healthy again after the Nginx web server starts responding to the health check.
 
+## 7. Implementation Result
+
+The Application Load Balancer was successfully deployed and tested with the existing EC2 instance.
+
+### Verification
+
+* The EC2 instance `new-vm` was registered with the target group.
+* The target health status was **Healthy**.
+* The ALB DNS name successfully opened the Nginx web page.
+* The ALB successfully forwarded HTTP traffic to the EC2 instance.
+
+### Final Architecture
+
+```text
+Internet
+   ↓
+Application Load Balancer
+   ↓
+Target Group
+   ↓
+EC2 - new-vm
+   ↓
+Nginx
+   ↓
+Web Page
+```
+
+The ALB implementation was successfully completed as Phase 2 of the Secure AWS Web Application project.
