@@ -10,11 +10,28 @@ The Auto Scaling Group was integrated with the existing Application Load Balance
 
 ## 2. Architecture
 
-Internet → Application Load Balancer → Target Group → Auto Scaling Group → EC2 → Nginx → Web Application
+The application architecture was enhanced by introducing an Application Load Balancer and Auto Scaling Group.
 
-When the Auto Scaling Group scales out, additional EC2 instances can be launched using the configured Launch Template.
+Internet → Application Load Balancer → Target Group → Auto Scaling Group → EC2 Instances → Nginx → Web Application
 
----
+The Application Load Balancer distributes incoming requests to healthy EC2 instances.
+
+The Auto Scaling Group manages the EC2 instances and can launch additional instances when required.
+
+### Architecture Flow
+
+Internet
+↓
+Application Load Balancer
+↓
+Target Group
+↓
+Auto Scaling Group
+↓
+EC2 Instance 1 → Nginx
+EC2 Instance 2 → Nginx
+↓
+Web Application
 
 ## 3. Launch Template
 
