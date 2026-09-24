@@ -31,7 +31,7 @@ Auto Scaling Group
 EC2 Instance 1 → Nginx
 EC2 Instance 2 → Nginx
 ↓
-Web Applicatin
+Web Application
 
 ## 3. Launch Template
 
