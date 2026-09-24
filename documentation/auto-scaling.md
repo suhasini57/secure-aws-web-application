@@ -156,6 +156,22 @@ The new instance was registered with the Target Group and could serve the applic
 
 ---
 
+### Test 5: Automatic Instance Replacement
+
+An EC2 instance managed by the Auto Scaling Group was stopped manually to simulate instance unavailability.
+
+The Auto Scaling Group detected that the available capacity had fallen below the desired capacity.
+
+A replacement EC2 instance was automatically launched using the configured Launch Template.
+
+The replacement instance was registered with the Target Group after passing the health checks.
+
+After the testing was completed, the Minimum Capacity and Desired Capacity were changed to 0 to prevent the Auto Scaling Group from maintaining running EC2 instances.
+
+**Result: Successful**
+
+---
+
 ## Implementation Result
 
 The EC2 Auto Scaling implementation was successfully completed.
@@ -212,4 +228,6 @@ The Target Group health check was verified successfully.
 
 Scaling was tested by increasing the desired capacity and launching an additional EC2 instance.
 
-The new instance was registered with the Target Group and was able to serve the application through the Application Load Balancer.
+Automatic instance replacement was also tested by stopping an ASG-managed instance. The Auto Scaling Group successfully launched a replacement instance.
+
+After testing, the Minimum Capacity and Desired Capacity were set to 0 to pause EC2 instance provisioning and avoid unnecessary running instance costs.
